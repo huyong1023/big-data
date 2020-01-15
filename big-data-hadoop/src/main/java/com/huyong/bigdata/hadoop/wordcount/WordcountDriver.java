@@ -1,4 +1,7 @@
-package com.atguigu.wordcount;
+package com.huyong.bigdata.hadoop.wordcount;
+
+
+
 import java.io.IOException;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

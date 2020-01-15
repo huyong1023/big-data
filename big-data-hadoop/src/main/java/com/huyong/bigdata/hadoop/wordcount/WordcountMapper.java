@@ -1,4 +1,4 @@
-package com.atguigu.wordcount;
+package com.huyong.bigdata.hadoop.wordcount;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ public class WordcountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 		String[] words = line.split(" ");
 		
 		// 3 将单词输出为<单词，1>
-		for(String word:words){
+		for(String word : words){
 			// 将单词作为key，将次数1作为value,以便于后续的数据分发，可以根据单词分发，以便于相同单词会到相同的reducetask中
 			context.write(new Text(word), new IntWritable(1));
 		}

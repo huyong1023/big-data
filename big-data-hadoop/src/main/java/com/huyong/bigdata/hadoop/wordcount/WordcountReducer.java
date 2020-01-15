@@ -1,4 +1,5 @@
-package com.atguigu.wordcount;
+package com.huyong.bigdata.hadoop.wordcount;
+
 import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
