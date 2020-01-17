@@ -42,9 +42,13 @@ public class FlowDriver {
         job.setNumReduceTasks(5);
 
 
+        //7关联combiner
+        job.setCombinerClass(FlowCombiner.class);
 
 
-        //6 设置输入数据的路径和输出数据的路径
+
+
+        //7 设置输入数据的路径和输出数据的路径
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 

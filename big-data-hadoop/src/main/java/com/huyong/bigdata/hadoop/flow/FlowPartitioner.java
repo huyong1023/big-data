@@ -11,7 +11,7 @@ public class FlowPartitioner extends Partitioner<Text, FlowBean> {
 
     public int getPartition(Text key, FlowBean bean, int i) {
 
-        String phoneNum = key.toString().substring(9, 3);
+        String phoneNum = key.toString().substring(0, 3);
 
         int partitions = 4;
 
