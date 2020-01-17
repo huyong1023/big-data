@@ -8,12 +8,12 @@ import org.apache.hadoop.io.Writable;
 
 public class TableBean implements Writable {
 
-	private String order_id; // 订单id
-	private String p_id; // 产品id
-	private int amount; // 产品数量
+	private String order_id; // 璁㈠崟id
+	private String p_id; // 浜у搧id
+	private int amount; // 浜у搧鏁伴噺
 
-	private String pname; // 产品名称
-	private String flag;// 表的标记
+	private String pname; // 浜у搧鍚嶇О
+	private String flag;// 琛ㄧ殑鏍囪
 
 	public TableBean() {
 		super();
