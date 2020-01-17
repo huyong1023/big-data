@@ -1,31 +1,72 @@
-package com.huyong.bigdata.hadoop.order;
+package com.atguigu.mapreduce.order;
 
-import org.apache.hadoop.io.WritableComparator;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
-/**
- * Created by yonghu on 2020/1/17.
- */
-public class OrderBean extends WritableComparator {
+import org.apache.hadoop.io.WritableComparable;
 
-    private String orderId;
-    private double price;
+public class OrderBean implements WritableComparable<OrderBean> {
 
-    public String getOrderId() {
-        return orderId;
-    }
+	private String orderId; // 订单id
+	private Double price; // 商品价格
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
+	public OrderBean() {
+		super();
+	}
 
-    public double getPrice() {
-        return price;
-    }
+	public OrderBean(String orderId, Double price) {
+		super();
+		this.orderId = orderId;
+		this.price = price;
+	}
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+	public String getOrderId() {
+		return orderId;
+	}
 
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
+	public Double getPrice() {
+		return price;
+	}
 
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	@Override
+	public void write(DataOutput out) throws IOException {
+		out.writeUTF(orderId);
+		out.writeDouble(price);
+	}
+	
+	
+	@Override
+	public void readFields(DataInput in) throws IOException {
+		this.orderId = in.readUTF();
+		this.price = in.readDouble();
+
+	}
+
+	@Override
+	public int compareTo(OrderBean o) {
+		//  两次排序
+		// 1 按照id号排序
+		int comResult = this.orderId.compareTo(o.getOrderId());
+		
+		if (comResult == 0) {
+			// 2 按照价格倒序排序
+			comResult = this.price > o.getPrice()?-1:1;
+		}
+		
+		return comResult;
+	}
+
+	@Override
+	public String toString() {
+		return orderId + "\t" + price;
+	}
 }
