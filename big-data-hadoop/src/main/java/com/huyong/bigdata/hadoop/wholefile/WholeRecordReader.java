@@ -21,13 +21,13 @@ public class WholeRecordReader extends RecordReader<NullWritable, BytesWritable>
 	private Configuration configuration;
 	private boolean isProcess = false;
 		
-	// ³õÊ¼»¯·½·¨
+	// åˆå§‹åŒ–æ–¹æ³•
 	@Override
 	public void initialize(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
-		// »ñÈ¡ÇĞÆ¬ĞÅÏ¢
+		// è·å–åˆ‡ç‰‡ä¿¡æ¯
 		this.split = (FileSplit) split;
 		
-		// »ñÈ¡ÅäÖÃĞÅÏ¢
+		// è·å–é…ç½®ä¿¡æ¯
 		configuration = context.getConfiguration();
 	}
 
@@ -37,21 +37,21 @@ public class WholeRecordReader extends RecordReader<NullWritable, BytesWritable>
 		if (!isProcess) {
 			FSDataInputStream fis = null;
 			try {
-				// °´ÎÄ¼şÕûÌå´¦Àí£¬¶ÁÈ¡
+				// æŒ‰æ–‡ä»¶æ•´ä½“å¤„ç†ï¼Œè¯»å–
 				FileSystem fs = FileSystem.get(configuration);
 				
-				// »ñÈ¡ÇĞÆ¬µÄÂ·¾¶
+				// è·å–åˆ‡ç‰‡çš„è·¯å¾„
 				Path path = split.getPath();
 				
-				// »ñÈ¡µ½ÇĞÆ¬µÄÊäÈëÁ÷
+				// è·å–åˆ°åˆ‡ç‰‡çš„è¾“å…¥æµ
 				fis = fs.open(path);
 				
 				byte[] buf = new byte[(int) split.getLength()];
 				
-				// ¶ÁÈ¡Êı¾İ
+				// è¯»å–æ•°æ®
 				IOUtils.readFully(fis, buf, 0, buf.length);
 				
-				// ÉèÖÃÊä³ö
+				// è®¾ç½®è¾“å‡º
 				value.set(buf, 0, buf.length);
 				
 			} finally {

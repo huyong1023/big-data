@@ -13,7 +13,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 
 public class WholeFileInputformat extends FileInputFormat<NullWritable, BytesWritable>{
 
-	// ÊÇ·ñ¿ÉÒÔÇĞ¸î
+	// æ˜¯å¦å¯ä»¥åˆ‡å‰²
 	@Override
 	protected boolean isSplitable(JobContext context, Path filename) {
 		
@@ -26,7 +26,7 @@ public class WholeFileInputformat extends FileInputFormat<NullWritable, BytesWri
 		
 		WholeRecordReader reader = new WholeRecordReader();
 		
-		// µ÷ÓÃ³õÊ¼»¯·½·¨
+		// è°ƒç”¨åˆå§‹åŒ–æ–¹æ³•
 		reader.initialize(split, context);
 		
 		return reader;

@@ -15,19 +15,19 @@ public class WholeMapper extends Mapper<NullWritable, BytesWritable, Text, Bytes
 	@Override
 	protected void setup(Context context)
 			throws IOException, InterruptedException {
-		// »ñÈ¡ÇÐÆ¬Â·¾¶£¬
+		// èŽ·å–åˆ‡ç‰‡è·¯å¾„ï¼Œ
 		FileSplit inputSplit = (FileSplit) context.getInputSplit();
 		
 		Path path = inputSplit.getPath();
 		
-		// ÉèÖÃk
+		// è®¾ç½®k
 		k.set(path.toString());
 	}
 	
 	@Override
 	protected void map(NullWritable key, BytesWritable value,
 			Context context) throws IOException, InterruptedException {
-		// ¿ØÖÆÊä³öÊý¾Ý
+		// æŽ§åˆ¶è¾“å‡ºæ•°æ®
 		context.write(k, value);
 	}
 	

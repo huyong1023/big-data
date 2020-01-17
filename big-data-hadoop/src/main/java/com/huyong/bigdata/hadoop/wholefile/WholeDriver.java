@@ -17,9 +17,9 @@ public class WholeDriver {
 		
 		job.setJarByClass(WholeDriver.class);
 
-		// 关联自定义的inputformat
+		// 鍏宠仈鑷畾涔夌殑inputformat
 		job.setInputFormatClass(WholeFileInputformat.class);
-		// 设置输出文件的格式为sequencefile
+		// 璁剧疆杈撳嚭鏂囦欢鐨勬牸寮忎负sequencefile
 		job.setOutputFormatClass(SequenceFileOutputFormat.class);
 
 		job.setOutputKeyClass(Text.class);
