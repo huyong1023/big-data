@@ -5,18 +5,18 @@ import org.apache.hadoop.io.WritableComparator;
 
 public class OrderGroupingCompartor extends WritableComparator {
 
-	// Ğ´Ò»¸ö¿Õ²Î¹¹Ôì
+	// å†™ä¸€ä¸ªç©ºå‚æ„é€ 
 	public OrderGroupingCompartor(){
 		super(OrderBean.class, true);
 	}
 	
-	// ÖØĞ´±È½ÏµÄ·½·¨
+	// é‡å†™æ¯”è¾ƒçš„æ–¹æ³•
 	@Override
 	public int compare(WritableComparable a, WritableComparable b) {
 		OrderBean aBean = (OrderBean) a;
 		OrderBean bBean = (OrderBean) b;
 
-		// ¸ù¾İ¶©µ¥idºÅ±È½Ï£¬ÅĞ¶ÏÊÇ·ñÊÇÒ»×é
+		// æ ¹æ®è®¢å•idå·æ¯”è¾ƒï¼Œåˆ¤æ–­æ˜¯å¦æ˜¯ä¸€ç»„
 		return aBean.getOrderId().compareTo(bBean.getOrderId());
 	}
 }

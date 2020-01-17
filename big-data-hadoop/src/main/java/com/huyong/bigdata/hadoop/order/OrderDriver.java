@@ -10,43 +10,43 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class OrderDriver {
 
 	public static void main(String[] args) throws Exception {
-		// 1 »ñÈ¡ÅäÖÃĞÅÏ¢
+		// 1 è·å–é…ç½®ä¿¡æ¯
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf);
 
-		// 2 ÉèÖÃjar°ü¼ÓÔØÂ·¾¶
+		// 2 è®¾ç½®jaråŒ…åŠ è½½è·¯å¾„
 		job.setJarByClass(OrderDriver.class);
 
-		// 3 ¼ÓÔØmap/reduceÀà
+		// 3 åŠ è½½map/reduceç±»
 		job.setMapperClass(OrderMapper.class);
 		job.setReducerClass(OrderReducer.class);
 
-		// 4 ÉèÖÃmapÊä³öÊı¾İkeyºÍvalueÀàĞÍ
+		// 4 è®¾ç½®mapè¾“å‡ºæ•°æ®keyå’Œvalueç±»å‹
 		job.setMapOutputKeyClass(OrderBean.class);
 		job.setMapOutputValueClass(NullWritable.class);
 
-		// 5 ÉèÖÃ×îÖÕÊä³öÊı¾İµÄkeyºÍvalueÀàĞÍ
+		// 5 è®¾ç½®æœ€ç»ˆè¾“å‡ºæ•°æ®çš„keyå’Œvalueç±»å‹
 		job.setOutputKeyClass(OrderBean.class);
 		job.setOutputValueClass(NullWritable.class);
 
-		// 6 ÉèÖÃÊäÈëÊı¾İºÍÊä³öÊı¾İÂ·¾¶
+		// 6 è®¾ç½®è¾“å…¥æ•°æ®å’Œè¾“å‡ºæ•°æ®è·¯å¾„
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-//		// 10 ÉèÖÃreduce¶ËµÄ·Ö×é
+//		// 10 è®¾ç½®reduceç«¯çš„åˆ†ç»„
 //		job.setGroupingComparatorClass(OrderSortGroupingComparator.class);
 //
 		
-		// 10 ¹ØÁªgroupingComparator
+		// 10 å…³è”groupingComparator
 		job.setGroupingComparatorClass(OrderGroupingCompartor.class);
 		
-		// 7 ÉèÖÃ·ÖÇø
+		// 7 è®¾ç½®åˆ†åŒº
 		job.setPartitionerClass(OrderPatitioner.class);
 
-		// 8 ÉèÖÃreduce¸öÊı
+		// 8 è®¾ç½®reduceä¸ªæ•°
 		job.setNumReduceTasks(3);
 
-		// 9 Ìá½»
+		// 9 æäº¤
 		boolean result = job.waitForCompletion(true);
 		System.exit(result ? 0 : 1);
 

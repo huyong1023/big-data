@@ -7,7 +7,7 @@ public class OrderPatitioner extends Partitioner<OrderBean, NullWritable>{
 
 	@Override
 	public int getPartition(OrderBean key, NullWritable value, int numPartitions) {
-		// °´ÕÕkeyµÄorderidµÄhashCodeÖµ·ÖÇø
+		// æŒ‰ç…§keyçš„orderidçš„hashCodeå€¼åˆ†åŒº
 		 return (key.getOrderId().hashCode() & Integer.MAX_VALUE) % numPartitions;
 	}
 }

@@ -11,7 +11,7 @@ public class OrderReducer extends Reducer<OrderBean, NullWritable, OrderBean, Nu
 	protected void reduce(OrderBean bean, Iterable<NullWritable> values,
 			Context context)	throws IOException, InterruptedException {
 		
-		// Ð´³ö
+		// å†™å‡º
 		context.write(bean, NullWritable.get());
 	}
 }

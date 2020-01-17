@@ -8,8 +8,8 @@ import org.apache.hadoop.io.WritableComparable;
 
 public class OrderBean implements WritableComparable<OrderBean> {
 
-	private String orderId; // ¶©µ¥id
-	private Double price; // ÉÌÆ·¼Û¸ñ
+	private String orderId; // è®¢å•id
+	private Double price; // å•†å“ä»·æ ¼
 
 	public OrderBean() {
 		super();
@@ -53,12 +53,12 @@ public class OrderBean implements WritableComparable<OrderBean> {
 
 	@Override
 	public int compareTo(OrderBean o) {
-		//  Á½´ÎÅÅĞò
-		// 1 °´ÕÕidºÅÅÅĞò
+		//  ä¸¤æ¬¡æ’åº
+		// 1 æŒ‰ç…§idå·æ’åº
 		int comResult = this.orderId.compareTo(o.getOrderId());
 		
 		if (comResult == 0) {
-			// 2 °´ÕÕ¼Û¸ñµ¹ĞòÅÅĞò
+			// 2 æŒ‰ç…§ä»·æ ¼å€’åºæ’åº
 			comResult = this.price > o.getPrice()?-1:1;
 		}
 		

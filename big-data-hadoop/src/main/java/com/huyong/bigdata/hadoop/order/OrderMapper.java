@@ -13,18 +13,18 @@ public class OrderMapper extends Mapper<LongWritable, Text, OrderBean, NullWrita
 	@Override
 	protected void map(LongWritable key, Text value,
 			Context context) throws IOException, InterruptedException {
-		// 1 读取数据
+		// 1 璇诲彇鏁版嵁
 		String line = value.toString();
 		
-		// 2 切割数据
+		// 2 鍒囧壊鏁版嵁
 		String[] fields = line.split("\t");
 		
 		// Order_0000002	Pdt_03	522.8
-		// 3 封装bean对象
+		// 3 灏佽bean瀵硅薄
 		bean.setOrderId(fields[0]);
 		bean.setPrice(Double.parseDouble(fields[2]));
 		
-		// 4 写出
+		// 4 鍐欏嚭
 		context.write(bean, NullWritable.get());
 		
 	}
