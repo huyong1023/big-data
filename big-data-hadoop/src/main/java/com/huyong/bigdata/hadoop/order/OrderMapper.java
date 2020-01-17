@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.order;
+package com.huyong.bigdata.hadoop.order;
 
 import java.io.IOException;
 

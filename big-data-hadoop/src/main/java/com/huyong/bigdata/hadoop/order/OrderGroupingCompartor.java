@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.order;
+package com.huyong.bigdata.hadoop.order;
 
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;

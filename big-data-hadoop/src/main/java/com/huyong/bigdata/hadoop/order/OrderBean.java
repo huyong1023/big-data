@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.order;
+package com.huyong.bigdata.hadoop.order;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import org.apache.hadoop.io.WritableComparable;
 
-public class OrderBean implements WritableComparable<OrderBean> {
+public class  OrderBean implements WritableComparable<OrderBean> {
 
 	private String orderId; // 订单id
 	private Double price; // 商品价格

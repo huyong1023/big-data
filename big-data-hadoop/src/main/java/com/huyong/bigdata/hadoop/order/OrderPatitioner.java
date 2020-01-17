@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.order;
+package com.huyong.bigdata.hadoop.order;
 
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Partitioner;
