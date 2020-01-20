@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.distributedcache;
+package com.huyong.bigdata.hadoop.distributedcache;
 
 import java.net.URI;
 

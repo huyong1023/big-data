@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.Table;
+package com.huyong.bigdata.hadoop.table;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

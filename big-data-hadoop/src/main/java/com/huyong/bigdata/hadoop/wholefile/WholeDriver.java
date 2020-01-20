@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.wholefile;
+package com.huyong.bigdata.hadoop.wholefile;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

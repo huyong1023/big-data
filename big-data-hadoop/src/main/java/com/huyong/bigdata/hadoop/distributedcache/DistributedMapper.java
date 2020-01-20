@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.distributedcache;
+package com.huyong.bigdata.hadoop.distributedcache;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +16,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 public class DistributedMapper extends Mapper<LongWritable, Text, Text, NullWritable>{
 	// 缓存pd.txt数据
-	private Map<String, String> pdMap = new HashMap<>();
+	private Map<String, String> pdMap = new HashMap<String, String>();
 	
 	@Override
 	protected void setup(Context context)

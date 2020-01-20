@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.Table;
+package com.huyong.bigdata.hadoop.table;
 
 import java.io.IOException;
 

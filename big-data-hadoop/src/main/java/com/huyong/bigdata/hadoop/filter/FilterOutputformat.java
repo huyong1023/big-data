@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.filter;
+package com.huyong.bigdata.hadoop.filter;
 
 import java.io.IOException;
 

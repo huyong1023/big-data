@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.Table;
+package com.huyong.bigdata.hadoop.table;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class TableReduce extends Reducer<Text, TableBean, TableBean, NullWritabl
 			throws IOException, InterruptedException {
 		// 0 准备存储数据的缓存
 		TableBean pdbean = new TableBean();
-		ArrayList<TableBean> orderBeans = new ArrayList<>();
+		ArrayList<TableBean> orderBeans = new ArrayList<TableBean>();
 
 		// 根据文件的不同分别处理数据
 
