@@ -1,4 +1,4 @@
-package com.z.hive.etl;
+package com.huyong.bigdata.hive.etl;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

@@ -13,6 +13,7 @@
         <module>big-data-hadoop</module>
         <module>big-data-hbase</module>
         <module>big-data-hive</module>
+        <module>big-data-scala</module>
   </modules>
 
 

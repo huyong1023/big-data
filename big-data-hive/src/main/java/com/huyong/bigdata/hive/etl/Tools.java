@@ -1,4 +1,4 @@
-package com.z.hive.etl;
+package com.huyong.bigdata.hive.etl;
 
 import java.io.IOException;
 import java.io.InputStream;

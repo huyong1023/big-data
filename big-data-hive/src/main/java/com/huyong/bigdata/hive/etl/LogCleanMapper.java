@@ -1,4 +1,4 @@
-package com.z.hive.etl;
+package com.huyong.bigdata.hive.etl;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ public class LogCleanMapper extends Mapper<LongWritable, Text, LongWritable, Tex
 		String lineValue = value.toString();
 		
 		String[] splitsStrings = lineValue.split("\t");
-		
+
 		if(splitsStrings.length < 30){
 			context.getCounter("Web Counter ", "Length < 30").increment(1L);
 			return;
