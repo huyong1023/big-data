@@ -14,7 +14,8 @@
         <module>big-data-hbase</module>
         <module>big-data-hive</module>
         <module>big-data-scala</module>
-  </modules>
+        <module>big-data-kafka</module>
+      </modules>
 
 
     <properties>
