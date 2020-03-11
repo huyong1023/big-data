@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.filter;
+package com.huyong.bigdata.hadoop.filter;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

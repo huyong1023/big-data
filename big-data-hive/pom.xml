@@ -9,10 +9,19 @@
   </parent>
   <groupId>com.huyong.bigdata</groupId>
   <artifactId>big-data-hive</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>big-data-hive</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+
+    <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-exec</artifactId>
+      <version>${hive.version}</version>
+    </dependency>
+
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
