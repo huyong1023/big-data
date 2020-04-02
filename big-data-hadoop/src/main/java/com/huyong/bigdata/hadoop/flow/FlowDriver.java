@@ -43,14 +43,16 @@ public class FlowDriver {
 
 
         //7关联combiner
-        job.setCombinerClass(FlowCombiner.class);
+        //job.setCombinerClass(FlowCombiner.class);
 
 
+        String str = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hadoop/data";
+        String str2 = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hadoop/output2";
 
 
         //7 设置输入数据的路径和输出数据的路径
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileInputFormat.setInputPaths(job, new Path(str));
+        FileOutputFormat.setOutputPath(job, new Path(str2));
 
 
         //7 提交

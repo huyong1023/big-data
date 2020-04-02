@@ -18,14 +18,23 @@ public class LogCleanMapReduce extends Configured implements Tool{
 		LogCleanMapReduce lc = new LogCleanMapReduce();
 //		args = new String[]{"/weblog/20170725/2015082818", "/user/hive/warehouse/syllabus.db/track_log/date=20150828/hour=18"};
 //		/user/hive/warehouse/syllabus.db/track_log/date=20150828/hour=18
-		Tools.deleteFileInHDFS(args[1].substring(0, 57), args[1].substring(57));
-    	int status = ToolRunner.run(lc.getConf(), lc, args);
+		String str = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hive/input";
+		String str2 = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hive/output";
+		String strss[] = new String[]{str, str2};
+		//Tools.deleteFileInHDFS(args[1].substring(0, 57), args[1].substring(57));
+    	int status = ToolRunner.run(lc, strss);
     	System.exit(status);
 
 	}
 	
 	 public int run(String[] args) throws Exception {
-			Configuration conf = new Configuration();
+
+		 String str = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hive/input";
+		 String str2 = "/Users/yonghu/Downloads/gitlab/big-data/big-data-hive/output";
+
+
+
+		 Configuration conf = new Configuration();
 	    	
 	    	Job job = Job.getInstance(conf);
 	    	job.setJarByClass(LogCleanMapReduce.class);
