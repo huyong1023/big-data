@@ -1,7 +1,0 @@
-com/huyong/bigdata/hive/udf/BaseFieldUDF.class
-com/huyong/bigdata/hive/etl/LogCleanMapReduce.class
-com/huyong/bigdata/hive/etl/LogCleanMapper.class
-com/huyong/bigdata/App.class
-com/huyong/bigdata/hive/etl/Tools.class
-com/huyong/bigdata/hive/etl/LogCleanReducer.class
-com/huyong/bigdata/hive/udtf/EventJsonUDTF.class
