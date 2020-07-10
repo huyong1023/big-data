@@ -15,6 +15,7 @@
         <module>big-data-hive</module>
         <module>big-data-scala</module>
         <module>big-data-kafka</module>
+        <module>spark-warehouse</module>
       </modules>
 
 
@@ -100,6 +101,12 @@
             <artifactId>junit</artifactId>
             <version>4.4</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
         </dependency>
     </dependencies>
 

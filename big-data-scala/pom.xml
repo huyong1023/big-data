@@ -10,6 +10,14 @@
   <groupId>com.huyong.bigdata</groupId>
   <artifactId>big-data-scala</artifactId>
   <version>1.0</version>
+
+
+  <properties>
+    <sspark.excel.version>0.12.5</sspark.excel.version>
+  </properties>
+
+
+
   <dependencies>
 
     <dependency>
@@ -72,6 +80,41 @@
       <artifactId>jest</artifactId>
       <version>5.3.3</version>
     </dependency>
+
+
+
+    <!-- https://mvnrepository.com/artifact/com.crealytics/spark-excel -->
+    <dependency>
+      <groupId>com.crealytics</groupId>
+      <artifactId>spark-excel_${scala.compat.version}</artifactId>
+      <version>0.12.5</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>3.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-schemas</artifactId>
+      <version>3.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.17</version>
+    </dependency>
+
+
 
 
 
